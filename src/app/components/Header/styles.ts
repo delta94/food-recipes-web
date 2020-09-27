@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 import bg from '../../../assets/img/bg.png'
 
@@ -8,10 +9,12 @@ interface IHeaderProps {
 export const Container = styled.header<IHeaderProps>`
     padding: 0.2rem;
     background-image: url('${bg}');
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
-    border-radius: 60px;
-    border: 6px solid white;
+    /* border-radius: 60px; */
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    /* border: 6px solid white; */
     position: relative;
     height: 300px;
 
@@ -33,6 +36,20 @@ export const Container = styled.header<IHeaderProps>`
             display: block;
         }
     }
+
+    a {
+        text-decoration: none;
+        display: block;
+    }
+
+    /* h1 {
+        font-size: 4rem;
+        color: #312e2d;
+        margin-left: 2rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    } */
 `
 
 export const NavLinks = styled.ul<IHeaderProps>`
@@ -45,6 +62,10 @@ export const NavLinks = styled.ul<IHeaderProps>`
 
     li {
         list-style: none;
+    }
+
+    a { 
+        color: black;
     }
 
     @media screen and (max-width: 650px) {
@@ -73,7 +94,7 @@ export const NavLinks = styled.ul<IHeaderProps>`
 }
 `
 
-export const LogoLink = styled.a`
+export const LogoLink = styled(Link)`
     img {
         object-fit: contain;
         max-width: 200px;
@@ -81,8 +102,14 @@ export const LogoLink = styled.a`
 `
 
 export const NavLinksRight = styled.div`
-    display: flex;  
+    display: flex;
+    justify-content: center;
     align-items: center;
+
+    a { 
+        color: black;
+    }
+
 
     @media screen and (max-width: 650px) {
             display: block;
@@ -90,21 +117,23 @@ export const NavLinksRight = styled.div`
     }
 `
 
-export const SignUpLink = styled.li`
-    display: flex;
-    align-items: center;
+export const SignUpLink = styled(Link)`
     margin-left: 1rem;
     border-radius: 25px;
     padding: 0.5rem 1.6rem;
-    background-color: white;
-    color: black;
+    background-color: #f6e5c9;
+    color: black !important;
+    position: relative;
+    top: 9px;
 
     @media screen and (max-width: 650px) {
             max-width: 7rem;
+            margin-top: 1rem;
             margin-left: 0;
             background-color: lightgrey;
             margin-left: auto;
             margin-right: auto;
+            top: 0;
         }
     }
 `

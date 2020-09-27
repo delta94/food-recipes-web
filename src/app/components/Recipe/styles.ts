@@ -63,6 +63,8 @@ export const RecipeRight = styled.div`
 `
 
 export const RecipeTime = styled.div`
+    align-items: center;
+    
     span {
         margin: 1rem;
         font-weight: bold;

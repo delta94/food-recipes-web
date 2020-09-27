@@ -3,8 +3,15 @@ import React, { useEffect, useState } from 'react'
 import MenuIcon from '@material-ui/icons/Menu'
 import MenuOpenIcon from '@material-ui/icons/MenuOpen'
 
-import { Container, NavLinks, LogoLink, NavLinksRight, SignUpLink } from './styles'
+import {
+  Container,
+  NavLinks,
+  LogoLink,
+  NavLinksRight,
+  SignUpLink
+} from './styles'
 import logo from '../../../assets/img/logo.png'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -21,29 +28,32 @@ const Header = () => {
     }
   }
 
-  console.log(isVisible)
-
   return (
     <Container isVisible={isVisible}>
       <nav>
-        <button onClick={() => handleVisible()}>
-          {isVisible ? <MenuOpenIcon fontSize="large" /> : <MenuIcon fontSize="large" />}
+        <button onClick={handleVisible}>
+          {isVisible ? (
+            <MenuOpenIcon fontSize='large' />
+          ) : (
+            <MenuIcon fontSize='large' />
+          )}
         </button>
         <NavLinks isVisible={isVisible}>
           <li>
-            <LogoLink href=''>
+            <LogoLink to='/'>
               <img src={logo} alt='Logo recipes' />
             </LogoLink>
           </li>
 
-          <li>Home</li>
+          <Link to="/"><li>Home</li></Link>
 
           <NavLinksRight>
-            <li>Login</li>
-            <SignUpLink>SignUp</SignUpLink>
+            <Link to="/login">
+              <li>Login</li>
+            </Link>
+            <SignUpLink to="/signup">SignUp</SignUpLink>
           </NavLinksRight>
         </NavLinks>
-
       </nav>
     </Container>
   )

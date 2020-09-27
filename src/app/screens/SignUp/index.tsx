@@ -12,7 +12,7 @@ const SignIn = () => {
     <Container>
       <Content>
         <AnimationContainer>
-          <img src={logo} alt="Recipes logo" />
+          <Link to="/"><img src={logo} alt="Recipes" /></Link>
 
           <form onSubmit={handleSubmit}>
             <h1>Faça seu Cadastro</h1>

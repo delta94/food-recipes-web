@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components'
 
+import bg from '../../../assets/img/bg--signin-signup.png'
+
 export const Container = styled.div`
   height: 100vh;
 
@@ -32,6 +34,7 @@ export const AnimationContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 
   animation: ${appearFromLeft} 1s;
 
@@ -41,7 +44,8 @@ export const AnimationContainer = styled.div`
 
   form {
     margin: 80px 0;
-    width: 340px;
+    width: 100%;
+    max-width: 340px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -64,10 +68,11 @@ export const AnimationContainer = styled.div`
 
     h1 {
       margin-bottom: 24px;
+      color: #312e2d;
     }
 
     a {
-      color: #f4efe8;
+      color: #312e2d;
       display: block;
       margin-top: 24px;
       text-decoration: none;
@@ -77,7 +82,7 @@ export const AnimationContainer = styled.div`
   }
 
   > a {
-    color: #ff9000;
+    color: #312e2d;
     display: block;
     margin-top: 24px;
     text-decoration: none;
@@ -90,6 +95,6 @@ export const AnimationContainer = styled.div`
 
 export const Background = styled.div`
   flex: 1;
-  background: url('https://images.unsplash.com/photo-1512058454905-6b841e7ad132') no-repeat center;
+  background: url('${bg}') no-repeat center;
   background-size: cover;
 `

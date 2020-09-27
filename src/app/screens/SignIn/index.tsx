@@ -12,7 +12,7 @@ const SignIn = () => {
     <Container>
       <Content>
         <AnimationContainer>
-          <img src={logo} alt="Recipes" />
+          <Link to="/"><img src={logo} alt="Recipes" /></Link>
 
           <form onSubmit={handleSubmit}>
             <h1>Faça seu login</h1>
@@ -26,8 +26,6 @@ const SignIn = () => {
             />
 
             <button type="submit">Entrar</button>
-
-            <a href="forgo">Esqueci minha senha</a>
           </form>
 
           <Link to="/signup">
