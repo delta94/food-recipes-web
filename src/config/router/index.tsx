@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import Home from '../../app/screens/Home'
 import SignIn from '../../app/screens/SignIn'
+import SignUp from '../../app/screens/SignUp'
 
 export default function Routes () {
   return (
@@ -14,7 +15,7 @@ export default function Routes () {
         <SignIn />
       </Route>
       <Route path='/signup'>
-        <h1>SignUp</h1>
+        <SignUp />
       </Route>
       <Route path='/'>
         <Header />

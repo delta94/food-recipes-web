@@ -12,11 +12,12 @@ const SignIn = () => {
     <Container>
       <Content>
         <AnimationContainer>
-          <img src={logo} alt="Recipes" />
+          <img src={logo} alt="Recipes logo" />
 
           <form onSubmit={handleSubmit}>
-            <h1>Faça seu login</h1>
+            <h1>Faça seu Cadastro</h1>
 
+            <input name="name" placeholder="Nome" />
             <input name="email" placeholder="E-mail" />
 
             <input
@@ -25,13 +26,12 @@ const SignIn = () => {
               placeholder="Senha"
             />
 
-            <button type="submit">Entrar</button>
+            <button type="submit">Cadastrar</button>
 
-            <a href="forgo">Esqueci minha senha</a>
           </form>
 
-          <Link to="/signup">
-            Criar conta
+          <Link to="/login">
+            Fazer Login
           </Link>
         </AnimationContainer>
       </Content>
