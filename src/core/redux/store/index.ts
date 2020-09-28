@@ -1,7 +1,14 @@
-import { createStore } from 'redux'
+import { persistStore } from 'redux-persist'
+
+import { createStore, applyMiddleware } from 'redux'
 
 import reducers from './ducks'
 
-const store = createStore(reducers)
+const store = createStore(
+  reducers,
+  applyMiddleware()
+)
 
-export default store
+const persistor = persistStore(store)
+
+export { store, persistor }

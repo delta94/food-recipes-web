@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import logo from '../../../assets/img/logo.png'
 import { Creators } from '../../../core/redux/store/ducks/auth'
+import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 
 import { Container, Content, AnimationContainer, Background } from './styles'
@@ -24,10 +25,11 @@ const SignIn = () => {
     event.preventDefault()
 
     try {
-      const validate = await schema.validate(schema)
-      console.log(validate)
+      await schema.validate(schema)
+
+      dispatch(signInRequest(email, password))
     } catch (error) {
-      console.log(error)
+      toast(error.message)
     }
 
     // dispatch(Creators.login('pass', 'asasa'))
