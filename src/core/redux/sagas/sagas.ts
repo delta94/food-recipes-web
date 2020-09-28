@@ -23,13 +23,11 @@ export function * signIn ({ email, password }: ISignIn) {
 
     const { token, user } = response.data
 
-    console.log(token, user)
-
     api.defaults.headers.Authorization = `Bearer ${token}`
 
     yield put(Creators.signInSuccess(token, user))
 
-    history.push('/dashboard')
+    history.push('/')
   } catch (error) {
     toast.error('Falha na autenticação, verifique seus dados')
     yield put(Creators.signFailure())

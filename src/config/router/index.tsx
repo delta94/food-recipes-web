@@ -35,7 +35,7 @@ export default function Routes () {
       <Route path='/signup'>
         <SignUp />
       </Route>
-      <Route path='/'>
+      <Route path='/' exact>
         <Header />
         <Home />
       </Route>
