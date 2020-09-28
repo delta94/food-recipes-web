@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import logo from '../../../assets/img/logo.png'
+import { Creators } from '../../../core/redux/store/ducks/auth'
 
 import { Container, Content, AnimationContainer, Background } from './styles'
 
 const SignIn = () => {
-  function handleSubmit () {
+  const dispatch = useDispatch()
 
+  function handleSubmit (event: ChangeEvent<HTMLFormElement>) {
+    event.preventDefault()
+    dispatch(Creators.login('pass', 'asasa'))
   }
   return (
     <Container>
