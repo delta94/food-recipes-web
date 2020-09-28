@@ -62,6 +62,11 @@ export const NavLinks = styled.ul<IHeaderProps>`
 
     li {
         list-style: none;
+        color: black;
+    }
+
+    li + a, a + a, a + li {
+        margin-left: 1rem;
     }
 
     a { 
@@ -136,4 +141,10 @@ export const SignUpLink = styled(Link)`
             top: 0;
         }
     }
+`
+
+export const Button = styled.button`
+    display: block !important;
+    background-color: lightgrey;
+    color: black;
 `

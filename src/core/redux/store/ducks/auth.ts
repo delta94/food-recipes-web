@@ -15,25 +15,23 @@ interface IAction {
 }
 
 const signInRequest = (state = initialState, action: IAction) => {
-  return ({ payload: { email: action.email, password: action.password } })
+  return ({ email: action.email, password: action.password, loading: true })
 }
 
 const signInSuccess = (state = initialState, action: IAction) => {
-  return ({ payload: { token: action.token, action: action.user } })
+  return ({ token: action.token, action: action.user, loading: false, signed: true })
 }
 
 const signUpRequest = (state = initialState, action: IAction) => {
-  console.log(state)
-  console.log(action)
-  return ({ payload: { name: action.name, email: action.email, password: action.password } })
+  return ({ name: action.name, email: action.email, password: action.password })
 }
 
 const signFailure = (state = initialState, action: IAction) => {
-  return { ...state }
+  return { signed: false }
 }
 
 const signOut = (state = initialState, action: IAction) => {
-  return { ...state }
+  return { signed: false }
 }
 
 export default createReducer(initialState, {

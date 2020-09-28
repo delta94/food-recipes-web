@@ -12,7 +12,7 @@ export const Container = styled.article`
 export const ContainerRecipe = styled.article`
     display: flex;
 
-    div {
+    div, form {
         width: 100%;
     }
 `

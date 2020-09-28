@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { Creators } from '../../../core/redux/store/ducks/auth'
+import { useDispatch, useSelector } from 'react-redux'
 
 import MenuIcon from '@material-ui/icons/Menu'
 import MenuOpenIcon from '@material-ui/icons/MenuOpen'
@@ -16,6 +18,12 @@ import { Link } from 'react-router-dom'
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false)
 
+  const dispatch = useDispatch()
+
+  const {
+    auth: { signed, action }
+  } = useSelector((state): any => state)
+
   useEffect(() => {
     setIsVisible(false)
   }, [])
@@ -26,6 +34,10 @@ const Header = () => {
     } else {
       setIsVisible(true)
     }
+  }
+
+  function handleLogout () {
+    dispatch(Creators.signOut())
   }
 
   return (
@@ -45,13 +57,46 @@ const Header = () => {
             </LogoLink>
           </li>
 
-          <Link to="/"><li>Home</li></Link>
+          {signed ? (
+            ''
+          ) : (
+            <Link to='/'>
+              <li>Home</li>
+            </Link>
+          )}
 
           <NavLinksRight>
-            <Link to="/login">
-              <li>Login</li>
-            </Link>
-            <SignUpLink to="/signup">SignUp</SignUpLink>
+            {signed ? (
+              <li>{'Olá, ' + action.name}</li>
+            ) : (
+              <Link to='/login'>
+                <li>Login</li>
+              </Link>
+            )}
+
+            {signed ? (
+              <Link to='/recipes/list'>
+                <li>Minhas Receitas</li>
+              </Link>
+            ) : (
+              ''
+            )}
+
+            {signed ? (
+              <Link to='/recipes/new'>
+                <li>Criar Nova Receita</li>
+              </Link>
+            ) : (
+              ''
+            )}
+
+            {signed ? (
+              <li><a href="" onClick={handleLogout}>Logout</a></li>
+            ) : (
+              ''
+            )}
+
+            {signed ? '' : <SignUpLink to='/signup'>SignUp</SignUpLink>}
           </NavLinksRight>
         </NavLinks>
       </nav>

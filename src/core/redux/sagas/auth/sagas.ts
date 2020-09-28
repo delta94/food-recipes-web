@@ -1,11 +1,9 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects'
 import { toast } from 'react-toastify'
-import { Creators } from '../store/ducks/auth'
+import { Creators } from '../../store/ducks/auth'
 
-import history from '../../services/history'
-import api from '../../services/api'
-
-// import { signInSuccess, signFailure } from '../store/ducks/auth'
+import history from '../../../services/history'
+import api from '../../../services/api'
 
 interface ISignIn {
   email: string;
@@ -57,21 +55,27 @@ export function * signUp ({ name, email, password }: ISignUp) {
   }
 }
 
-// export function setToken ({ payload }) {
-//   if (!payload) return
+interface ISetToken {
+  payload: {
+    auth: {
+      token: string;
+    }
+  }
+  type: string;
+}
 
-//   const { token } = payload.auth
+export function setToken ({ payload }: ISetToken) {
+  if (!payload) return
 
-//   if (token) {
-//     api.defaults.headers.Authorization = `Bearer ${token}`
-//   }
-// }
+  const { token } = payload.auth
 
-// export function signOut () {
-//   history.push('/')
-// }
+  if (token) {
+    api.defaults.headers.Authorization = `Bearer ${token}`
+  }
+}
 
 export default all([
+  takeLatest('persist/REHYDRATE', setToken),
   takeLatest('SIGN_IN_REQUEST', signIn),
   takeLatest('SIGN_UP_REQUEST', signUp)
 ])

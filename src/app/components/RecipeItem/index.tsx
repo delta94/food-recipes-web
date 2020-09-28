@@ -1,21 +1,47 @@
-import React from 'react'
+import React, { MouseEvent, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { Creators } from '../../../core/redux/store/ducks/recipe'
 
 import { Container } from './styles'
 
-const RecipeItem = () => {
+interface IRecipeItem {
+  id: string
+  name: string
+  image: string
+  ingredients: string
+  time: string
+}
+
+const RecipeItem = ({ id, name, image, ingredients, time }: IRecipeItem) => {
+  // const recipe = useSelector((state: any): any => state?.recipe?.payload?.data?.data)
+
+  const dispatch = useDispatch()
+
+  // useEffect(() => {
+  //   dispatch(Creators.getRecipesRequest())
+  // }, [dispatch])
+
+  function handleDelete (event: MouseEvent<HTMLButtonElement>) {
+    event.preventDefault()
+
+    dispatch(Creators.deleteRecipeRequest(id))
+  }
+
   return (
     <Container>
-      <img
-        src='https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1231&q=80'
-        alt=''
-      />
-      <h2>Recipe</h2>
+      <Link to={`/recipes/${id}/edit`}>
+        <img
+          src={image}
+          alt={name}
+        />
+      </Link>
+      <h2>{name}</h2>
       <Link to='/'>
         <button type='submit'>Editar</button>
       </Link>
       <Link to='/'>
-        <button type='submit'>Apagar</button>
+        <button type="submit" onClick={handleDelete}>Apagar</button>
       </Link>
     </Container>
   )

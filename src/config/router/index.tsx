@@ -24,6 +24,11 @@ export default function Routes () {
         <CreateRecipe />
       </Route>
 
+      <Route path='/recipes/:recipeId/edit'>
+        <Header />
+        <CreateRecipe />
+      </Route>
+
       <Route path='/recipes/:id'>
         <Header />
         <Recipe />
