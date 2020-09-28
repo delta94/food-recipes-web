@@ -1,15 +1,21 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects'
 import { toast } from 'react-toastify'
+import { Creators } from '../store/ducks/auth'
 
 import history from '../../services/history'
 import api from '../../services/api'
 
-import { signInSuccess, signFailure } from '../store/ducks/auth'
+// import { signInSuccess, signFailure } from '../store/ducks/auth'
 
-export function * signIn ({ payload }) {
+interface ISignIn {
+  email: string;
+  password: string;
+  type: string;
+
+}
+
+export function * signIn ({ email, password }: ISignIn) {
   try {
-    const { email, password } = payload
-
     const response = yield call(api.post, 'auth', {
       email,
       password
@@ -17,21 +23,28 @@ export function * signIn ({ payload }) {
 
     const { token, user } = response.data
 
+    console.log(token, user)
+
     api.defaults.headers.Authorization = `Bearer ${token}`
 
-    yield put(signInSuccess(token, user))
+    yield put(Creators.signInSuccess(token, user))
 
     history.push('/dashboard')
   } catch (error) {
     toast.error('Falha na autenticação, verifique seus dados')
-    yield put(signFailure())
+    yield put(Creators.signFailure())
   }
 }
 
-export function * signUp ({ payload }) {
-  try {
-    const { name, email, password } = payload
+interface ISignUp {
+  name: string;
+  email: string;
+  password: string;
+  type: string;
+}
 
+export function * signUp ({ name, email, password }: ISignUp) {
+  try {
     yield call(api.post, 'users', {
       name,
       email,
@@ -42,27 +55,25 @@ export function * signUp ({ payload }) {
   } catch (error) {
     toast.error('Falha no cadastro, verifique seus dados!')
 
-    yield put(signFailure())
+    yield put(Creators.signFailure())
   }
 }
 
-export function setToken ({ payload }) {
-  if (!payload) return
+// export function setToken ({ payload }) {
+//   if (!payload) return
 
-  const { token } = payload.auth
+//   const { token } = payload.auth
 
-  if (token) {
-    api.defaults.headers.Authorization = `Bearer ${token}`
-  }
-}
+//   if (token) {
+//     api.defaults.headers.Authorization = `Bearer ${token}`
+//   }
+// }
 
-export function signOut () {
-  history.push('/')
-}
+// export function signOut () {
+//   history.push('/')
+// }
 
 export default all([
-  takeLatest('persist/REHYDRATE', setToken),
-  takeLatest('@auth/SIGN_IN_REQUEST', signIn),
-  takeLatest('@auth/SIGN_UP_REQUEST', signUp),
-  takeLatest('@auth/SIGN_OUT', signOut)
+  takeLatest('SIGN_IN_REQUEST', signIn),
+  takeLatest('SIGN_UP_REQUEST', signUp)
 ])

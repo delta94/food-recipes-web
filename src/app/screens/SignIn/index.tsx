@@ -25,7 +25,7 @@ const SignIn = () => {
     event.preventDefault()
 
     try {
-      await schema.validate(schema)
+      // await schema.validate(schema)
 
       dispatch(Creators.signInRequest(email, password))
     } catch (error) {

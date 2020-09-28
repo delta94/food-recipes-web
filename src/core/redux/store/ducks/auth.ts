@@ -2,28 +2,44 @@ import { createActions, createReducer } from 'reduxsauce'
 
 export const { Types, Creators } = createActions({
   signInRequest: ['email', 'password'],
-  logout: []
+  signInSuccess: ['token', 'user'],
+  signUpRequest: ['name', 'email', 'password'],
+  signFailure: [],
+  signOut: []
 })
 
-const initialState = {
-  token: null,
-  signed: false,
-  loading: false
-}
+const initialState = {}
 
 interface IAction {
   [key: string]: string;
 }
 
 const signInRequest = (state = initialState, action: IAction) => {
-  console.log(state)
-  console.log(action)
-  return ({ ...state, username: [action.username], password: [action.password] })
+  return ({ payload: { email: action.email, password: action.password } })
 }
 
-const logout = (state = initialState, action: IAction) => ({ ...state })
+const signInSuccess = (state = initialState, action: IAction) => {
+  return ({ payload: { token: action.token, action: action.user } })
+}
+
+const signUpRequest = (state = initialState, action: IAction) => {
+  console.log(state)
+  console.log(action)
+  return ({ payload: { name: action.name, email: action.email, password: action.password } })
+}
+
+const signFailure = (state = initialState, action: IAction) => {
+  return { ...state }
+}
+
+const signOut = (state = initialState, action: IAction) => {
+  return { ...state }
+}
 
 export default createReducer(initialState, {
   [Types.SIGN_IN_REQUEST]: signInRequest,
-  [Types.LOGOUT]: logout
+  [Types.SIGN_IN_SUCCESS]: signInSuccess,
+  [Types.SIGN_UP_REQUEST]: signUpRequest,
+  [Types.SIGN_FAILURE]: signFailure,
+  [Types.SIGN_OUT]: signOut
 })
