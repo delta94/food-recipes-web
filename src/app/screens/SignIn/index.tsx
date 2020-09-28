@@ -27,7 +27,7 @@ const SignIn = () => {
     try {
       await schema.validate(schema)
 
-      dispatch(signInRequest(email, password))
+      dispatch(Creators.signInRequest(email, password))
     } catch (error) {
       toast(error.message)
     }
