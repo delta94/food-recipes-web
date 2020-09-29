@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[SCREENS] App Should render correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <header
+        class="sc-bdnylx rFDJH"
+      >
+        <nav>
+          <button>
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+              />
+            </svg>
+          </button>
+          <ul
+            class="sc-gtssRu iscbEU"
+          >
+            <li>
+              <a
+                class="sc-dlnjPT fmSA-DQ"
+                href="/"
+              >
+                <img
+                  alt="Logo recipes"
+                />
+              </a>
+            </li>
+            <a
+              href="/"
+            >
+              <li>
+                Home
+              </li>
+            </a>
+            <div
+              class="sc-hKFyIo hCwfHi"
+            >
+              <a
+                href="/login"
+              >
+                <li>
+                  Login
+                </li>
+              </a>
+              
+              
+              
+              <a
+                class="sc-eCApGN cDQcax"
+                href="/signup"
+              >
+                SignUp
+              </a>
+            </div>
+          </ul>
+        </nav>
+      </header>
+      <main
+        class="sc-iqAbSa kzjxQD"
+      >
+        <h1>
+          Destaques
+        </h1>
+        <div />
+      </main>
+      <div
+        class="Toastify"
+      />
+    </div>
+  </body>,
+  "container": <div>
+    <header
+      class="sc-bdnylx rFDJH"
+    >
+      <nav>
+        <button>
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            />
+          </svg>
+        </button>
+        <ul
+          class="sc-gtssRu iscbEU"
+        >
+          <li>
+            <a
+              class="sc-dlnjPT fmSA-DQ"
+              href="/"
+            >
+              <img
+                alt="Logo recipes"
+              />
+            </a>
+          </li>
+          <a
+            href="/"
+          >
+            <li>
+              Home
+            </li>
+          </a>
+          <div
+            class="sc-hKFyIo hCwfHi"
+          >
+            <a
+              href="/login"
+            >
+              <li>
+                Login
+              </li>
+            </a>
+            
+            
+            
+            <a
+              class="sc-eCApGN cDQcax"
+              href="/signup"
+            >
+              SignUp
+            </a>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main
+      class="sc-iqAbSa kzjxQD"
+    >
+      <h1>
+        Destaques
+      </h1>
+      <div />
+    </main>
+    <div
+      class="Toastify"
+    />
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

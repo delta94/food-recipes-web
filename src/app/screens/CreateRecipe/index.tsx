@@ -53,7 +53,7 @@ const CreateRecipe = () => {
           <div>
             <BoxImage preview={preview}>
               <label>
-                <input type='file' name='image' onChange={handleSelectFile} />
+                <input type='file' name='image' onChange={handleSelectFile} placeholder="Insira sua imagem" />
                 <BackupIcon fontSize='large' />
               </label>
             </BoxImage>
