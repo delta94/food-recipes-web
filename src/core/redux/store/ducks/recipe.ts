@@ -6,18 +6,12 @@ export const { Types, Creators } = createActions({
   deleteRecipeRequest: ['id'],
   getRecipesRequest: [''],
   getRecipesSuccess: ['data'],
-  getRecipeRequest: ['id']
+  getRecipeRequest: ['id'],
+  getRecipeSuccess: ['data']
+
 })
 
 const initialState = {}
-
-interface IItem {
-  id: string
-  name: string
-  image: string
-  ingredients: string
-  time: string
-}
 
 interface IAction {
   [key: string]: string;
@@ -44,7 +38,14 @@ const getRecipesSuccess = (state = initialState, action: IAction) => {
 }
 
 const getRecipeRequest = (state = initialState, action: IAction) => {
-  return ({ payload: action })
+  console.log('getRecipeRequest', action)
+  console.log('getRecipeRequest', state)
+  return ({ payload: action, loading: true })
+}
+
+const getRecipeSuccess = (state = initialState, action: IAction) => {
+  console.log('getRecipeSuccess', action.data)
+  return action.data
 }
 
 export default createReducer(initialState, {
@@ -53,5 +54,6 @@ export default createReducer(initialState, {
   [Types.DELETE_RECIPE_REQUEST]: deleteRecipeRequest,
   [Types.GET_RECIPES_REQUEST]: getRecipesRequest,
   [Types.GET_RECIPES_SUCCESS]: getRecipesSuccess,
-  [Types.GET_RECIPE_REQUEST]: getRecipeRequest
+  [Types.GET_RECIPE_REQUEST]: getRecipeRequest,
+  [Types.GET_RECIPE_SUCCESS]: getRecipeSuccess
 })

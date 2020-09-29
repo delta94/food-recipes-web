@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { Creators } from '../../../core/redux/store/ducks/recipe'
@@ -11,6 +11,7 @@ interface IRecipe {
   name: string
   image: string
   ingredients: string
+  mode_prepare: string
   time: string
 }
 
@@ -34,6 +35,7 @@ const RecipesList = () => {
           id={recipe.id}
           name={recipe.name}
           image={recipe.image}
+          mode_prepare={recipe.mode_prepare}
           ingredients={recipe.ingredients}
           time={recipe.time}
         />

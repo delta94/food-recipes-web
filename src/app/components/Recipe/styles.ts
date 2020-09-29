@@ -22,6 +22,7 @@ export const RecipeContainer = styled.article`
 
 export const RecipeLeft = styled.div`
     img {
+        cursor: pointer;
         object-fit: cover;
         object-position: center;
         max-width: 250px;
@@ -47,9 +48,8 @@ export const RecipeRight = styled.div`
     justify-content: space-around;
     align-items: center;
 
-    h2, p {
-        /* margin: 0.9rem;
-        text-align: center; */
+    h2 {
+        cursor: pointer;
     }
 
     @media screen and (max-width: 600px) {

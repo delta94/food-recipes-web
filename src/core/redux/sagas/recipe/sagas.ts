@@ -4,7 +4,6 @@ import { Creators } from '../../store/ducks/recipe'
 
 import history from '../../../services/history'
 import api from '../../../services/api'
-import { string } from 'yup'
 
 interface ICreateRecipe {
   image: string;
@@ -36,20 +35,19 @@ export function * createRecipe ({ image, name, ingredients, mode_prepare, time }
 }
 
 interface IUpdateRecipe {
-  payload: {
-    id: string;
-    image: string;
-    name: string;
-    ingredients: string;
-    mode_prepare: string;
-    time: string;
-  }
+  id: string;
+  image: string;
+  name: string;
+  ingredients: string;
+  mode_prepare: string;
+  time: string;
   type: string;
 }
 
-export function * updateRecipe ({ payload }: IUpdateRecipe) {
+export function * updateRecipe ({ id, image, name, ingredients, mode_prepare, time }: IUpdateRecipe) {
   try {
-    const { id, image, name, ingredients, mode_prepare, time } = payload
+    console.log('id', id)
+    console.log('image', image)
 
     const data = new FormData()
 
@@ -59,22 +57,19 @@ export function * updateRecipe ({ payload }: IUpdateRecipe) {
     data.append('mode_prepare', mode_prepare)
     data.append('time', time)
 
-    const response = yield call(api.put, `/recipes/${id}`, data)
+    console.log('data', data)
+    yield call(api.put, `/recipes/${id}`, data)
 
-    const a = response.data
-
-    console.log(a)
+    yield put(Creators.getRecipesRequest())
 
     toast.success('Receita atualizada com sucesso!')
-
-    // history.push('/')
   } catch (error) {
     toast.error('Falha na atualização, verifique seus dados!')
   }
 }
 
 interface IDeleteRecipe {
-    id: string;
+  id: string;
   type: string;
 }
 
@@ -84,14 +79,7 @@ export function * deleteRecipe ({ id }: IDeleteRecipe) {
 
     toast.success('Receita apagada com sucesso!')
 
-    // yield put(Creators.getRecipesRequest())
-
-    // const a = response.data
-
-    // console.log(a)
-
-    // history.push('/')
-    // history.push('/recipes/list')
+    yield put(Creators.getRecipesRequest())
   } catch (error) {
     toast.error('Falha na remoção, verifique seus dados!')
   }
@@ -102,22 +90,16 @@ export function * getRecipes () {
     const data = yield call(api.get, '/recipes')
 
     yield put(Creators.getRecipesSuccess(data))
-
-    // history.push('/')
   } catch (error) {
-    // toast.error('Impossivel obter os dados')
   }
 }
 
 export function * getRecipe ({ id }: IDeleteRecipe) {
   try {
-    const data = yield call(api.get, '/recipes')
+    const { data } = yield call(api.get, `/recipes/${id}`)
 
-    yield put(Creators.getRecipesSuccess(data))
-
-    // history.push('/')
+    yield put(Creators.getRecipeSuccess(data))
   } catch (error) {
-    // toast.error('Impossivel obter os dados')
   }
 }
 
@@ -125,5 +107,6 @@ export default all([
   takeLatest('CREATE_RECIPE_REQUEST', createRecipe),
   takeLatest('UPDATE_RECIPE_REQUEST', updateRecipe),
   takeLatest('DELETE_RECIPE_REQUEST', deleteRecipe),
-  takeLatest('GET_RECIPES_REQUEST', getRecipes)
+  takeLatest('GET_RECIPES_REQUEST', getRecipes),
+  takeLatest('GET_RECIPE_REQUEST', getRecipe)
 ])

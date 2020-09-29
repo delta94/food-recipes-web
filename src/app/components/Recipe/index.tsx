@@ -1,31 +1,80 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import Modal from 'react-modal'
+import UpRecipe from '../../screens/UpRecipe'
+import Recipe from '../../screens/Recipe'
 
 import { RecipeContainer, RecipeLeft, RecipeRight, RecipeTime } from './styles'
 
-const RecipeM = () => {
+interface IRecipe {
+  id: string
+  name: string
+  image: string
+  ingredients: string
+  mode_prepare: string
+  time: string
+}
+
+const customStyles = {
+  content: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    maxWidth: '1000px'
+  }
+}
+
+const RecipeM = ({
+  id,
+  name,
+  image,
+  ingredients,
+  mode_prepare,
+  time
+}: IRecipe) => {
+  const [modalIsOpen, setIsOpen] = React.useState(false)
+
+  useEffect(() => {
+    Modal.setAppElement('body')
+  }, [])
+
+  function openModal () {
+    setIsOpen(true)
+  }
+
+  function closeModal () {
+    setIsOpen(false)
+  }
+
   return (
     <RecipeContainer>
       <RecipeLeft>
-        <Link to="/recipes/recipe">
-          <img
-            src='https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1231&q=80'
-            alt='Food'
-          />
-        </Link>
+        <img
+          onClick={openModal}
+          src={`http://localhost:3333/files/${image}`}
+          alt={name}
+        />
       </RecipeLeft>
       <RecipeRight>
-        <h2>Receita da vovó</h2>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s
-        </p>
+        <h2 onClick={openModal}>{name}</h2>
+        <p>{mode_prepare}</p>
         <RecipeTime>
           <span>Tempo de preparo:</span>
-          <p>1h</p>
+          <p>{time}</p>
         </RecipeTime>
       </RecipeRight>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+        <Recipe
+          id={id}
+          name={name}
+          image={image}
+          mode_prepare={mode_prepare}
+          ingredients={ingredients}
+          time={time}
+        />
+      </Modal>
     </RecipeContainer>
   )
 }

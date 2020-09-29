@@ -6,7 +6,12 @@ export const Container = styled.main`
     justify-content: space-between;
     align-items: center;
 
+    h2 {
+        cursor: pointer;
+    }
+
     img {
+        cursor: pointer;
         object-fit: cover;
         max-width: 100px;
         height: 100px;
