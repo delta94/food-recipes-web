@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import Modal from 'react-modal'
-import UpRecipe from '../../screens/UpRecipe'
-import Recipe from '../../screens/Recipe'
+import Recipe from '../RecipeHome'
 
 import { RecipeContainer, RecipeLeft, RecipeRight, RecipeTime } from './styles'
 

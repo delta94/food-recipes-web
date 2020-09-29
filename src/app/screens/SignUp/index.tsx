@@ -9,10 +9,11 @@ import * as Yup from 'yup'
 import { Container, Content, AnimationContainer, Background } from './styles'
 
 const schema = Yup.object().shape({
+  name: Yup.string().required('Nome: O nome é obrigatório'),
   email: Yup.string()
     .email('Insira um e-mail válido')
-    .required('O email é obrigatório'),
-  password: Yup.string().required('A senha é obrigatória')
+    .required('Email: O email é obrigatório'),
+  password: Yup.string().min(8, 'Senha: No mínimo 8 caracteres')
 })
 
 const SignIn = () => {
@@ -26,14 +27,16 @@ const SignIn = () => {
     event.preventDefault()
 
     try {
-      // await schema.validate(schema)
+      const isValid = await schema.isValid({ name, email, password })
 
-      dispatch(Creators.signUpRequest(name, email, password))
+      await schema.validate({ name, email, password })
+
+      if (isValid) {
+        dispatch(Creators.signUpRequest(name, email, password))
+      }
     } catch (error) {
       toast(error.message)
     }
-
-    // dispatch(Creators.login('pass', 'asasa'))
   }
 
   return (

@@ -15,6 +15,15 @@ export const ContainerRecipe = styled.article`
     div, form {
         width: 100%;
     }
+
+    button {
+        cursor: pointer;
+        border: 0;
+        border-radius: 25px;
+        padding: 0.5rem 1.6rem;
+        background-color: #f6e5c9;
+        color: black;
+    }
 `
 
 export const BoxInput = styled.div`

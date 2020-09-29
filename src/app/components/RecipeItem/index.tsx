@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { Creators } from '../../../core/redux/store/ducks/recipe'
 import Modal from 'react-modal'
-import Recipe from '../../screens/Recipe'
+import Recipe from '../RecipeHome'
 
 import { Container } from './styles'
-import UpRecipe from '../../screens/UpRecipe'
+import UpRecipe from '../UpRecipe'
 
 interface IRecipeItem {
   id: string

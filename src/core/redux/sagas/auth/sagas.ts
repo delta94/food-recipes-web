@@ -25,7 +25,7 @@ export function * signIn ({ email, password }: ISignIn) {
 
     yield put(Creators.signInSuccess(token, user))
 
-    history.push('/')
+    history.push('/recipes/list')
   } catch (error) {
     toast.error('Falha na autenticação, verifique seus dados')
     yield put(Creators.signFailure())
@@ -47,7 +47,7 @@ export function * signUp ({ name, email, password }: ISignUp) {
       password
     })
 
-    history.push('/')
+    history.push('/login')
   } catch (error) {
     toast.error('Falha no cadastro, verifique seus dados!')
 

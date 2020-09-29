@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Creators } from '../../../core/redux/store/ducks/auth'
 import { useDispatch, useSelector } from 'react-redux'
+import history from '../../../core/services/history'
 
 import MenuIcon from '@material-ui/icons/Menu'
 import MenuOpenIcon from '@material-ui/icons/MenuOpen'
@@ -38,6 +39,7 @@ const Header = () => {
 
   function handleLogout () {
     dispatch(Creators.signOut())
+    history.push('/')
   }
 
   return (
@@ -91,7 +93,11 @@ const Header = () => {
             )}
 
             {signed ? (
-              <li><a href="" onClick={handleLogout}>Logout</a></li>
+              <li>
+                <Link to='/' onClick={handleLogout}>
+                  Logout
+                </Link>
+              </li>
             ) : (
               ''
             )}

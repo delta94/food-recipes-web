@@ -64,6 +64,7 @@ export function * updateRecipe ({ id, image, name, ingredients, mode_prepare, ti
 
     toast.success('Receita atualizada com sucesso!')
   } catch (error) {
+    yield put(Creators.getRecipesRequest())
     toast.error('Falha na atualização, verifique seus dados!')
   }
 }

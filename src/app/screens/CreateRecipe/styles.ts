@@ -7,6 +7,15 @@ export const Container = styled.article`
     h1 {
         margin-bottom: 2rem;
     }
+
+    button {
+        cursor: pointer;
+        border: 0;
+        border-radius: 25px;
+        padding: 0.5rem 1.6rem;
+        background-color: #f6e5c9;
+        color: black;
+    }
 `
 
 export const ContainerRecipe = styled.article`
