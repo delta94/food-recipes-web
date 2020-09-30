@@ -8,7 +8,7 @@
         "plugin:react/recommended",
         "standard"
     ],
-    "ignorePatterns": ["**/__snapshots__/**"],
+    "ignorePatterns": ["**/__snapshots__/**", "**/*.png"],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"

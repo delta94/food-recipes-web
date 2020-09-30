@@ -1,5 +1,5 @@
 import React from 'react'
-import { fireEvent, render, waitFor, waitForElement } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
 import Header from '../../../app/components/Header'
