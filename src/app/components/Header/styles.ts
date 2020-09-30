@@ -41,15 +41,6 @@ export const Container = styled.header<IHeaderProps>`
         text-decoration: none;
         display: block;
     }
-
-    /* h1 {
-        font-size: 4rem;
-        color: #312e2d;
-        margin-left: 2rem;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    } */
 `
 
 export const NavLinks = styled.ul<IHeaderProps>`
@@ -67,6 +58,7 @@ export const NavLinks = styled.ul<IHeaderProps>`
 
     li + a, a + a, a + li {
         margin-left: 1rem;
+        margin: 1rem auto;
     }
 
     a { 
