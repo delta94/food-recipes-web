@@ -58,7 +58,7 @@ export const NavLinks = styled.ul<IHeaderProps>`
 
     li + a, a + a, a + li {
         margin-left: 1rem;
-        margin: 1rem auto;
+        /* margin: 1rem auto; */
     }
 
     a { 
