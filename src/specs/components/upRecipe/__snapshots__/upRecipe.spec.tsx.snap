@@ -22,6 +22,7 @@ Object {
                 <label>
                   <input
                     name="image"
+                    placeholder="Insira sua imagem"
                     type="file"
                   />
                   <svg
@@ -123,6 +124,7 @@ Object {
               <label>
                 <input
                   name="image"
+                  placeholder="Insira sua imagem"
                   type="file"
                 />
                 <svg

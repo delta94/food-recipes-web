@@ -1,6 +1,5 @@
 import React from 'react'
-import { fireEvent, getByText, render } from '@testing-library/react'
-import { screen } from '@testing-library/dom'
+import { fireEvent, render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
 import CreateRecipe from '../../../app/screens/CreateRecipe'
@@ -109,5 +108,29 @@ describe('[SCREENS] createRecipe', () => {
     })
 
     expect(fireEvent.click(getByText('Cadatrar receita'))).toBeTruthy()
+  })
+
+  it('Should value on onChange input is setted', () => {
+    const { getByPlaceholderText } = render(
+      <BrowserRouter>
+        <Provider store={store}>
+          <CreateRecipe />
+        </Provider>
+      </BrowserRouter>
+    )
+
+    // const mockChange = jest.fn()
+
+    fireEvent.change(getByPlaceholderText('Insira o nome da sua receita'), { target: { value: 'any_name' } })
+    fireEvent.change(getByPlaceholderText('Insira os ingredientes'), { target: { value: 'any_ingredients' } })
+    fireEvent.change(getByPlaceholderText('Insira o modo de preparo'), { target: { value: 'any_mode_prepare' } })
+    fireEvent.change(getByPlaceholderText('Insira o tempo estimado'), { target: { value: 'any_time' } })
+
+    expect(getByPlaceholderText('Insira o nome da sua receita')).toHaveValue('any_name')
+    expect(getByPlaceholderText('Insira os ingredientes')).toHaveValue('any_ingredients')
+    expect(getByPlaceholderText('Insira o modo de preparo')).toHaveValue('any_mode_prepare')
+    expect(getByPlaceholderText('Insira o tempo estimado')).toHaveValue('any_time')
+
+    // expect(expect(mockChange).toHaveBeenCalled())
   })
 })
