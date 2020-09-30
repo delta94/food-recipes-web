@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <header
-        class="sc-bdnylx rFDJH"
+        class="sc-bdnylx eOGTqq"
       >
         <nav>
           <button>
@@ -22,7 +22,7 @@ Object {
             </svg>
           </button>
           <ul
-            class="sc-gtssRu iscbEU"
+            class="sc-gtssRu cvxqQF"
           >
             <li>
               <a
@@ -79,7 +79,7 @@ Object {
   </body>,
   "container": <div>
     <header
-      class="sc-bdnylx rFDJH"
+      class="sc-bdnylx eOGTqq"
     >
       <nav>
         <button>
@@ -95,7 +95,7 @@ Object {
           </svg>
         </button>
         <ul
-          class="sc-gtssRu iscbEU"
+          class="sc-gtssRu cvxqQF"
         >
           <li>
             <a
