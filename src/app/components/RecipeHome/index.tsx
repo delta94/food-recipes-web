@@ -21,7 +21,7 @@ const Recipe = ({
 }: IRecipeItem) => {
   return (
     <Container>
-      <h1>Recipe</h1>
+      <h1>{name}</h1>
       <img src={`${baseURL}/files/${image}`} alt={name} />
 
       <h2>Ingredientes</h2>
