@@ -58,6 +58,7 @@ export const NavLinks = styled.ul<IHeaderProps>`
 
     li + a, a + a, a + li {
         margin-left: 1rem;
+        /* margin: 1rem; */
     }
 
     a { 
@@ -77,11 +78,11 @@ export const NavLinks = styled.ul<IHeaderProps>`
             border-radius: 40px;
             color: black;
             text-align: center;
-        }
 
-        li + a, a + a, a + li {
-        margin: 1rem auto;
-    }
+            li + a, a + a, a + li {
+                margin: 1rem auto;
+            }
+        }
 
         li {
             margin-top: 1rem;
