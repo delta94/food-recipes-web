@@ -2,7 +2,7 @@
 
 - [Food-recipes-web]
     - [Resumo](#resumo)
-    - [Demonstração em fotos](#demonstracao em fotos)
+    - [Demonstração em Fotos](#demonstracao-em-fotos)
     - [Pré Requisitos](#pre-requisitos)
     - [Observações](#pre-requisitos)
     - [Instalando](#instalando)
