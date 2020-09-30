@@ -1,4 +1,5 @@
 [![Coverage Status](https://coveralls.io/repos/github/vbeloti/food-recipes-web/badge.svg?branch=master)](https://coveralls.io/github/vbeloti/food-recipes-web?branch=master)
+[![Build Status](https://travis-ci.org/vbeloti/food-recipes-web.svg?branch=master)](https://travis-ci.org/vbeloti/food-recipes-web)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 
 # Food Recipes Web
