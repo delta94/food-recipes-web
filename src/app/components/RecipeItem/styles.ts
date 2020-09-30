@@ -13,7 +13,8 @@ export const Container = styled.main`
     img {
         cursor: pointer;
         object-fit: cover;
-        max-width: 100px;
+        max-width: 100%;
+        width: 100px;
         height: 100px;
         border-radius: 50%;
     }

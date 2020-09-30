@@ -1,44 +1,88 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Food Recipes Web
 
-## Available Scripts
+- [Food-recipes-web]
+    - [Resumo](#resumo)
+    - [Demonstração em fotos](#demonstracao em fotos)
+    - [Pré Requisitos](#pre-requisitos)
+    - [Observações](#pre-requisitos)
+    - [Instalando](#instalando)
+    - [Executando os testes](#executando-os-teste)
+    - [Configuração Inicial](#configuracao-inicial)
+    - [Executando a aplicação](#executando-a-aplicacao)
+    - [Recursos](#recursos)
 
-In the project directory, you can run:
+<!-- ## Link -->
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Resumo
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Esta é uma aplicação construída com Typescript + React.js, foi desenvolvida baseado na API <a href="https://github.com/vbeloti/food-recipes-api">Food Recipes API</a>. Com essa aplicação é possíve fazer login e cadastro de usuário, criar, editar, e apagar uma receita, CRUD completo.
 
-### `yarn test`
+## Demonstração em fotos
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="https://github.com/vbeloti/food-recipes-web/blob/master/.github/food-recipes-web-1.jpg?raw=true" alt="Food Recipes Web" />
+<img src="https://github.com/vbeloti/food-recipes-web/blob/master/.github/food-recipes-web-2.jpg?raw=true" alt="Food Recipes Web" />
+<img src="https://github.com/vbeloti/food-recipes-web/blob/master/.github/food-recipes-web-3.jpg?raw=true" alt="Food Recipes Web" />
+<img src="https://github.com/vbeloti/food-recipes-web/blob/master/.github/food-recipes-web-4.jpg?raw=true" alt="Food Recipes Web" />
+<img src="https://github.com/vbeloti/food-recipes-web/blob/master/.github/food-recipes-web-5.jpg?raw=true" alt="Food Recipes Web" />
+<img src="https://github.com/vbeloti/food-recipes-web/blob/master/.github/food-recipes-web-6.jpg?raw=true" alt="Food Recipes Web" />
+<img src="https://github.com/vbeloti/food-recipes-web/blob/master/.github/food-recipes-web-7.jpg?raw=true" alt="Food Recipes Web" />
 
-### `yarn build`
+### Pré-requisitos
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para executar este projeto, você precisará ter um ambiente mínimo para executar um aplicativo React, que pode ser encontrado <a href="https://reactjs.org/docs/getting-started.html">aqui</a>.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Você precisara instalar e configurar a API <a href="https://github.com/vbeloti/food-recipes-api">Food Recipes API</a>, que está aplicação irá consumir todos os dados vindos dela.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Observações
 
-### `yarn eject`
+1 - As rotas '/recipes/new', '/recipes/list' não estão privadas com isso você pode visualiza-lá e tentar criar uma receita, ou edita-lá sem estar autenticado, no entanto haverá um erro dizendo 'Falha no cadastro'.
+Para realizar essa ação você precisa fazer o login primeiro.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Instalando
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+** Clonando o Repositório **
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+$ git clone https://github.com/vbeloti/food-recipes-web
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+$ cd food-recipes-web
 
-## Learn More
+** Instalando dependências **
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+$ yarn
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+_ou_
+
+$ npm install
+
+### Executando os testes
+
+$ yarn test
+
+_ou_
+
+$ npm run test
+
+### Configuração Inicial
+
+Com a sua API <a href="https://github.com/vbeloti/food-recipes-api">Food Recipes API</a> devidamente configurados, você precisará localizar o arquivo url.ts(src/config/url.ts) e mudar a 'baseURL' que é a URL e a porta da API que você definiu quando configurou a Food Recipes API.
+
+### Executando a aplicação
+
+$ yarn start
+
+_ou_
+
+$ npm run start
+
+
+## Recursos
+
+| Recurso                    | Descrição                                                             |
+|:--------------             |:----------------------------------------------------------------------|
+| `/`                        | Lista todas as receitas                                               |
+| `/login`                   | Faz a autenticação do usuário                                         |
+| `/signup`                  | Cria uma nova conta                                                   |
+| `/recipes/list`            | Lista todas as receitas e possibilita Editar e Excluir uma receita    |
+| `/recipes/new`             | Cria uma nova receita                                                 |
+

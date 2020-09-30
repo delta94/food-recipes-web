@@ -79,9 +79,9 @@ export function * deleteRecipe ({ id }: IDeleteRecipe) {
     yield call(api.delete, `/recipes/${id}`)
 
     toast.success('Receita apagada com sucesso!')
-
     yield put(Creators.getRecipesRequest())
   } catch (error) {
+    yield put(Creators.getRecipesRequest())
     toast.error('Falha na remoção, verifique seus dados!')
   }
 }

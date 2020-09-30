@@ -17,34 +17,31 @@ interface IAction {
   [key: string]: string;
 }
 
-const createRecipeRequest = (state = initialState, action: IAction) => {
+export const createRecipeRequest = (state = initialState, action: IAction) => {
   return ({ payload: action })
 }
 
-const updateRecipeRequest = (state = initialState, action: IAction) => {
+export const updateRecipeRequest = (state = initialState, action: IAction) => {
   return ({ payload: action })
 }
 
-const deleteRecipeRequest = (state = initialState, action: any) => {
+export const deleteRecipeRequest = (state = initialState, action: any) => {
   return ({ payload: action })
 }
 
-const getRecipesRequest = (state = initialState, action: IAction) => {
+export const getRecipesRequest = (state = initialState, action: IAction) => {
   return ({ payload: action })
 }
 
-const getRecipesSuccess = (state = initialState, action: IAction) => {
+export const getRecipesSuccess = (state = initialState, action: IAction) => {
   return ({ payload: action })
 }
 
-const getRecipeRequest = (state = initialState, action: IAction) => {
-  console.log('getRecipeRequest', action)
-  console.log('getRecipeRequest', state)
+export const getRecipeRequest = (state = initialState, action: IAction) => {
   return ({ payload: action, loading: true })
 }
 
-const getRecipeSuccess = (state = initialState, action: IAction) => {
-  console.log('getRecipeSuccess', action.data)
+export const getRecipeSuccess = (state = initialState, action: IAction) => {
   return action.data
 }
 
