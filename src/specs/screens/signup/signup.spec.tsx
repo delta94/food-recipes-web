@@ -1,7 +1,6 @@
 import React from 'react'
-import { act, fireEvent, render } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import * as redux from 'react-redux'
 
 import SignUp from '../../../app/screens/SignUp'
 
