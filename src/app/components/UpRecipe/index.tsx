@@ -1,5 +1,6 @@
 import React, { useState, useEffect, ChangeEvent } from 'react'
 import { useDispatch } from 'react-redux'
+import baseURL from '../../../config/url'
 
 import { Creators } from '../../../core/redux/store/ducks/recipe'
 import BackupIcon from '@material-ui/icons/Backup'
@@ -26,7 +27,7 @@ const UpRecipe = ({
   const dispatch = useDispatch()
 
   const [selectedFile, setSelectedFile] = useState<File>()
-  const [preview, setPreview] = useState<string | undefined>(() => 'http://localhost:3333/files/' + imageFrom)
+  const [preview, setPreview] = useState<string | undefined>(() => `${baseURL}/files/${imageFrom}`)
   const [name, setName] = useState<string>(() => nameFrom)
   const [ingredients, setIngredients] = useState<string>(() => ingredientsFrom)
   const [mode_prepare, setMode_prepare] = useState<string>(() => mode_prepareFrom)

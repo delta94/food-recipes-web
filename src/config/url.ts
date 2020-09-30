@@ -1,3 +1,4 @@
-// URL base vinda da aplicação API
+// URL e PORTA base vinda da aplicação API
 
-export default { baseURL: 'http://localhost:3333' }
+const baseURL = process.env.BASE_URL || 'http://localhost:3333'
+export default baseURL
