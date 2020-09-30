@@ -2,7 +2,7 @@
 
 - [Food-recipes-web]
     - [Resumo](#resumo)
-    - [Link Demonstração API](#link-demonstracao-api)
+    - [Link Demonstração](#link-demonstracao-api)
     - [Demonstração em Fotos](#demonstracao-em-fotos)
     - [Pré Requisitos](#pre-requisitos)
     - [Observações](#pre-requisitos)
@@ -19,9 +19,9 @@
 
 Esta é uma aplicação construída com Typescript + React.js, foi desenvolvida baseado na API <a href="https://github.com/vbeloti/food-recipes-api">Food Recipes API</a>. Com essa aplicação é possíve fazer login e cadastro de usuário, criar, editar, e apagar uma receita, CRUD completo.
 
-## Link Demonstração API
+## Link Demonstração
 
-<a href="https://food-recipes-api-1.herokuapp.com/">https://food-recipes-api-1.herokuapp.com/</a>
+<a href="https://food-recipes-web.herokuapp.com/">https://food-recipes-web.herokuapp.com/</a>
 
 ## Demonstração em fotos
 
