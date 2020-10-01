@@ -74,7 +74,9 @@ $ npm run test
 
 ### Configuração Inicial
 
-Com a sua API <a href="https://github.com/vbeloti/food-recipes-api">Food Recipes API</a> devidamente configurados, você precisará localizar o arquivo url.ts(src/config/url.ts) e mudar a 'baseURL' que é a URL e a porta da API que você definiu quando configurou a Food Recipes API.
+Para configurar o upload das imagens existem duas opções
+1º utilizar o upload local e pra isso você deverá localizar o arquivo .env.example renomeá-lo para .env a propriedade deve estar como REACT_APP_STORAGE_TYPE=local
+2º utilizar o Amazon s3 e pra isso você deverá ter todas configurações na sua Food Recipes API, e e alterar REACT_APP_STORAGE_TYPE=local para STORAGE_TYPE=s3
 
 ### Executando a aplicação
 
