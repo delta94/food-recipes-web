@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { Creators } from '../../../core/redux/store/ducks/recipe'
 import Modal from 'react-modal'
 import Recipe from '../RecipeHome'
-import baseURL from '../../../config/url'
+import { baseURLImages } from '../../../config/url'
 
 import { Container } from './styles'
 import UpRecipe from '../UpRecipe'
@@ -73,7 +73,7 @@ const RecipeItem = ({
     <Container>
       <img
         onClick={openRecipeViewModal}
-        src={`${baseURL}/files/${image}`}
+        src={`${baseURLImages}/${image}`}
         alt={name}
       />
       <Modal

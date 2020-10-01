@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Modal from 'react-modal'
 import Recipe from '../RecipeHome'
-import baseURL from '../../../config/url'
+import { baseURLImages } from '../../../config/url'
 
 import { RecipeContainer, RecipeLeft, RecipeRight, RecipeTime } from './styles'
 
@@ -49,7 +49,7 @@ const RecipeM = ({
       <RecipeLeft>
         <img
           onClick={openModal}
-          src={`${baseURL}/files/${image}`}
+          src={`${baseURLImages}/${image}`}
           alt={name}
         />
       </RecipeLeft>

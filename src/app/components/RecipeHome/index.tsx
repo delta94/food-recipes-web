@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from './styles'
-import baseURL from '../../../config/url'
+import { baseURLImages } from '../../../config/url'
 
 interface IRecipeItem {
   id: string
@@ -22,7 +22,7 @@ const Recipe = ({
   return (
     <Container>
       <h1>{name}</h1>
-      <img src={`${baseURL}/files/${image}`} alt={name} />
+      <img src={`${baseURLImages}/${image}`} alt={name} />
 
       <h2>Ingredientes</h2>
       <p>{ingredients}</p>
