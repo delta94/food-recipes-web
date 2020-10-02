@@ -46,9 +46,6 @@ interface IUpdateRecipe {
 
 export function * updateRecipe ({ id, image, name, ingredients, mode_prepare, time }: IUpdateRecipe) {
   try {
-    console.log('id', id)
-    console.log('image', image)
-
     const data = new FormData()
 
     data.append('image', image)
@@ -57,7 +54,6 @@ export function * updateRecipe ({ id, image, name, ingredients, mode_prepare, ti
     data.append('mode_prepare', mode_prepare)
     data.append('time', time)
 
-    console.log('data', data)
     yield call(api.put, `/recipes/${id}`, data)
 
     yield put(Creators.getRecipesRequest())
