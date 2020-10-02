@@ -41,7 +41,7 @@ Esta é uma aplicação construída com Typescript + React.js, foi desenvolvida 
 
 Para executar este projeto, você precisará ter um ambiente mínimo para executar um aplicativo React, que pode ser encontrado <a href="https://reactjs.org/docs/getting-started.html">aqui</a>.
 
-Você precisara instalar e configurar a API <a href="https://github.com/vbeloti/food-recipes-api">Food Recipes API</a>, que está aplicação irá consumir todos os dados vindos dela.
+Você precisara instalar e configurar a API <a href="https://github.com/vbeloti/food-recipes-api">Food Recipes API</a>, pois está aplicação irá consumir todos os dados provindos da API.
 
 ## Observações
 
